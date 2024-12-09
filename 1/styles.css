@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('./4893794.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white; /* Makes the heading more visible */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white; /* Labels should be white for visibility on the semi-transparent background */
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="date"] {
+    padding: 9px;
+    color: #333; /* Date input text color */
+}
+
+button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 20px;
+    color: white; /* Makes the text visible */
+}
+
+.login-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .register-container {
+        padding: 20px;
+    }
+}
