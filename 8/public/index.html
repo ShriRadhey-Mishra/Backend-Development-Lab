@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #weather {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Weather App</h1>
+    <input type="text" id="city" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather">Enter a city to see the weather.</div>
+</div>
+
+<script>
+    async function getWeather() {
+        const city = document.getElementById('city').value.trim();
+        if (!city) {
+            alert('Please enter a city name.');
+            return;
+        }
+
+        const url = `/weather?city=${encodeURIComponent(city)}`;
+
+        try {
+            let response = await fetch(url);
+            if (!response.ok) throw new Error('Weather data not available');
+            let data = await response.json();
+            document.getElementById('weather').textContent = `Current Weather in ${city}: ${data.temp_c}°C, ${data.condition}`;
+        } catch (error) {
+            document.getElementById('weather').textContent = 'Weather information not available';
+            console.error('Error fetching weather:', error);
+        }
+    }
+</script>
+</body>
+</html>
