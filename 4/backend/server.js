@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const dbURI = 'mongodb://localhost:27017/your_db_name';
+const dbURI = 'mongodb://localhost:27017/authorization_and_authentication';
 mongoose.connect(dbURI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
