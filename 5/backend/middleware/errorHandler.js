@@ -7,7 +7,7 @@ const logErrors = (err, req, res, next) => {
 // Sends a user-friendly error message
 const errorHandler = (err, req, res, next) => {
     res.status(500).json({
-        message: 'Something went wrong!',
+        message: 'Something went wrong man!',
         error: err.message
     });
 };
